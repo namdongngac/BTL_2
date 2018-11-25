@@ -1,205 +1,173 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.effect;
+package GameEffect;
 
-import com.gameobject.Camera;
-import com.gameobject.GameWorld;
-import com.gameobject.PhysicalMap;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Shape;
 import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.AttributedCharacterIterator;
 import java.util.Hashtable;
+
 import javax.imageio.ImageIO;
+import javax.management.InstanceAlreadyExistsException;
 
-/**
- *
- * @author admin
- */
 public class CacheDataLoader {
-    private static CacheDataLoader instance;
-    
-    private String framefile = "data/frames.txt";
-    private String animationfile = "data/animations.txt";
-    private String mapfile = "levels/Level";
-    public static int level = 1;
-    
-    private Hashtable <String, FrameImage> frameImages;
-    private Hashtable <String, Animation> animations;
-    
-    
-    private GameWorld gameWorld;
-    private char[][] map;
-    
-    private CacheDataLoader(){}
-    public static CacheDataLoader getInstance(){
-        if(instance==null){
-            instance = new CacheDataLoader();         
-        }
-        return instance;
-    }
-    public void LoadFrame() throws IOException{
-        frameImages = new Hashtable <String, FrameImage>();
-        
-        FileReader fr = new FileReader(framefile);
-        BufferedReader br = new BufferedReader(fr);
-        
-        String line = null;
-        if(br.readLine()==null){
-            System.out.println("No data");
-            throw new IOException();
-        }
-        else{
-            fr = new FileReader(framefile);
-            br = new BufferedReader(fr);
-            
-            while((line = br.readLine()).equals(""));
-            int n = Integer.parseInt(line);
-            
-            for(int i = 0; i < n; i++){
-                
-                FrameImage frame = new FrameImage();
-                while((line = br.readLine()).equals(""));
-                frame.setName(line);
-                
-                while((line = br.readLine()).equals(""));
-                String[] str = line.split(" ");
-                String path = str[1];
-                
-                while((line = br.readLine()).equals(""));
-                str = line.split(" ");
-                int x = Integer.parseInt(str[1]);
-                
-                while((line = br.readLine()).equals(""));
-                str = line.split(" ");
-                int y = Integer.parseInt(str[1]);
-                
-                while((line = br.readLine()).equals(""));
-                str = line.split(" ");
-                int w = Integer.parseInt(str[1]);
-                
-                while((line = br.readLine()).equals(""));
-                str = line.split(" ");
-                int h = Integer.parseInt(str[1]);
-                
-                BufferedImage image = ImageIO.read(new File(path));
-                BufferedImage subImage = image.getSubimage(x, y, w, h);
-                frame.setImage(subImage);
-                
-                instance.frameImages.put(frame.getName(), frame);
-            }
-        }
-        br.close();
-    }
-    public FrameImage getFrameImage(String name){
-        FrameImage frame = new FrameImage(instance.frameImages.get(name));
-        return frame;
-    }
-    
-    public void LoadAnimation() throws IOException{
-        animations = new Hashtable <String, Animation>();
-        
-        FileReader fr = new FileReader(animationfile);  
-        BufferedReader br = new BufferedReader(fr);
-        
-        String line = null;
-        if(br.readLine()==null){
-            System.out.println("No data");
-            throw new IOException();
-        }
-        else{
-            fr = new FileReader(animationfile);
-            br = new BufferedReader(fr);
-            
-            while((line = br.readLine()).equals(""));
-            int n = Integer.parseInt(line);
-            
-            for(int i = 0; i < n; i++){
-                Animation anim = new Animation();
-                
-                while((line = br.readLine()).equals(""));
-                anim.setName(line);
-                
-                while((line = br.readLine()).equals(""));
-                String[] str = line.split(" ");
-                for(int j = 0; j < str.length; j+=2){
-                    anim.add(getFrameImage(str[j]), Long.parseLong(str[j+1]));
-                }
-                
-                instance.animations.put(anim.getName(), anim);
-            }
-        }
-        br.close();
-    }
-    
-    public void LoadMap()throws IOException{
-        
-        FileReader fr = new FileReader(mapfile+level+".txt");
-        BufferedReader br = new BufferedReader(fr);
-        
-        String line = null;
-        if(br.readLine()==null){
-            System.out.println("No data");
-            throw new IOException();
-        }
-        else{
-            fr = new FileReader(mapfile+level+".txt");
-            br = new BufferedReader(fr);
-    
-            PhysicalMap pmap = new PhysicalMap(0,0,gameWorld);
-
-            while((line = br.readLine()).equals(""));               
-            String[] str = line.split(" ");
-            String level = str[0];
-            int row = Integer.parseInt(str[1]);           
-            int col = Integer.parseInt(str[2]);
-       
-
-            instance.map = new char[row][col];
-            for(int i = 0; i < row; i++){
-                while((line = br.readLine()).equals("")); 
-                for(int j = 0; j < col; j++){
-                    instance.map[i][j] = line.charAt(j);
-                }
-            }
-            for(int i = 0;i < row;i++){
-            
-                for(int j = 0;j<col;j++)
-                    System.out.print(instance.map[i][j]);
-            
-                System.out.println();
-        }
-                        
-                                       
-        }
-        br.close();
-    }
-    
-    public Animation getAnimation(String name){
-        Animation anim = new Animation(instance.animations.get(name));
-        return anim;
-    }
-    
-    public void LoadData() throws IOException{
-        LoadFrame();
-        LoadAnimation();
-        LoadMap();
-    }
-    
-    public char[][] getMap(){      
-        return instance.map;
-    
-    }
-
-    public void setGameWorld(GameWorld gameWorld) {
-        this.gameWorld = gameWorld;
-    }
-
-    
-    
-    
+	private String frameFile = "data/frameFile.txt";
+	private String animationFile = "data/animationFile.txt";
+	private String physicalMapFile = "data/physicalFile.txt";
+	
+	private static CacheDataLoader instance;
+	private Hashtable<String, FrameImage> frameImage;
+	private Hashtable<String, GameAnimation> animations;
+	private int[][] phys_map;
+	private CacheDataLoader() {
+		
+	}
+	public static CacheDataLoader getInstance() {
+		if(instance == null) {
+			instance = new CacheDataLoader();
+			return instance;
+		}
+		return instance;
+	}
+	public void loadFrame() throws IOException   {
+		frameImage = new Hashtable<String,FrameImage>();
+		FileReader fr = new FileReader(frameFile);
+		BufferedReader br = new BufferedReader(fr);
+		String line = null;
+		if(br.readLine() == null) {
+			System.out.println("No data");
+			throw new IOException();
+		}else {
+			fr = new FileReader(frameFile);
+			br = new BufferedReader(fr);
+			while((line = br.readLine()).equals(""));
+				int n = Integer.parseInt(line);
+				
+				int x = 0,y = 0,w = 0,h = 0;
+				for(int i=0;i<n;i++) {
+					
+					FrameImage frame = new FrameImage();
+					while((line=br.readLine()).equals("")); 
+						frame.setName(line);
+						//System.out.println(frame.getName());
+					
+					while((line=br.readLine()).equals("")); 
+						String[] arr = line.split(" ");
+						String path = arr[1];
+						
+					
+					while((line=br.readLine()).equals("")); 
+						 arr = line.split(" ");
+						x = Integer.parseInt(arr[1]);
+					
+					while((line=br.readLine()).equals("")); 
+						 arr = line.split(" ");
+						y = Integer.parseInt(arr[1]);
+					
+					while((line=br.readLine()).equals("")); 
+						arr = line.split(" ");
+						w = Integer.parseInt(arr[1]);
+						
+					
+					while((line=br.readLine()).equals("")); 
+						arr = line.split(" ");
+						h = Integer.parseInt(arr[1]);
+					
+					BufferedImage imageData = ImageIO.read(new File(path));
+					BufferedImage image = imageData.getSubimage(x, y, w, h);
+					
+					frame.setImage(image);
+					instance.frameImage.put(frame.getName(), frame);
+				}
+				br.close();
+			}
+			
+		
+	}
+	public FrameImage getFrameImage(String name) {
+		FrameImage frameImage = new FrameImage(instance.frameImage.get(name));
+		return frameImage;
+	}
+	public GameAnimation getGameAnimation(String name) {
+		GameAnimation animation = new GameAnimation(instance.animations.get(name));
+		return animation;
+	}
+	public void loadAnimation() throws IOException {
+	    animations = new Hashtable<String,GameAnimation>();
+	    FileReader fr = new FileReader(animationFile);
+		BufferedReader br = new BufferedReader(fr);
+		String line = null;
+		if(br.readLine()==null) {
+			System.out.println("No Data in ani");
+			throw new IOException();
+		}else {
+			fr = new FileReader(animationFile);
+			br = new BufferedReader(fr);
+			while((line=br.readLine()).equals("")); 
+				
+				int n = Integer.parseInt(line);
+				for(int i=0;i<n;i++) {
+					GameAnimation animation = new GameAnimation();
+					String[] arr;
+					while((line=br.readLine()).equals("")); 
+						animation.setName(line);
+					
+					while((line=br.readLine()).equals("")); 
+						arr=line.split(" ");
+						
+					
+					for(int j=0;j<arr.length;j+=2) {
+						animation.add(getFrameImage(arr[j]), Double.parseDouble(arr[j+1]));
+						
+					}
+					instance.animations.put(animation.getName(), animation);
+				}
+			
+		}
+	}
+	public void loadData() throws IOException {
+		loadFrame();
+		loadAnimation();
+		loadPhysMap();
+	}
+	public int[][] getPhysicalMap() {
+		return instance.phys_map;
+	}
+	public void loadPhysMap() throws IOException {
+		FileReader fr = new FileReader(physicalMapFile);
+		BufferedReader br = new BufferedReader(fr);
+		
+		String line = null;
+		line = br.readLine();
+		int numberofRows = Integer.parseInt(line);
+		line = br.readLine();
+		int numberofColums = Integer.parseInt(line);
+		instance.phys_map = new int[numberofRows][numberofColums];
+		for(int i=0;i<numberofRows;i++) {
+			line = br.readLine();
+			String arr[] = line.split(" ");
+			for(int j =0;j<numberofColums;j++) {
+				phys_map[i][j] = Integer.parseInt(arr[j]);
+			}
+		}
+		/*for(int i=0;i<numberofRows;i++) {
+			for(int j=0;j<numberofColums;j++) {
+				System.out.print(" " +instance.phys_map[i][j]);
+				
+			}
+			System.out.println("");
+		}*/
+	}
+	
 }
