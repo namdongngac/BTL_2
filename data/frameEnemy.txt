@@ -1,0 +1,337 @@
+48
+
+enemy1_down1
+image data/enemy1.png
+x 0
+y 0
+h 60
+w 60
+
+enemy1_down2
+image data/enemy1.png
+x 60
+y 0
+h 60
+w 60
+
+enemy1_down3
+image data/enemy1.png
+x 120
+y 0
+h 60
+w 60
+
+enemy1_down4
+image data/enemy1.png
+x 180
+y 0
+h 60
+w 60
+
+enemy1_up1
+image data/enemy1.png
+x 0
+y 180
+h 60
+w 60
+
+enemy1_up2
+image data/enemy1.png
+x 60
+y 180
+h 60
+w 60
+
+enemy1_up3
+image data/enemy1.png
+x 120
+y 180
+h 60
+w 60
+
+enemy1_up4
+image data/enemy1.png
+x 180
+y 180
+h 60
+w 60
+
+enemy1_left1
+image data/enemy1.png
+x 0
+y 60
+h 60
+w 60
+
+enemy1_left2
+image data/enemy1.png
+x 60
+y 60
+h 60
+w 60
+
+enemy1_left3
+image data/enemy1.png
+x 120
+y 60
+h 60
+w 60
+
+enemy1_left4
+image data/enemy1.png
+x 180
+y 60
+h 60
+w 60
+
+enemy1_right1
+image data/enemy1.png
+x 0
+y 120
+h 60
+w 60
+
+enemy1_right2
+image data/enemy1.png
+x 60
+y 120
+h 60
+w 60
+
+enemy1_right3
+image data/enemy1.png
+x 120
+y 120
+h 60
+w 60
+
+enemy1_right4
+image data/enemy1.png
+x 180
+y 120
+h 60
+w 60
+
+enemy2_down1
+image data/enemy2.png
+x 0
+y 0
+h 60
+w 60
+
+enemy2_down2
+image data/enemy2.png
+x 60
+y 0
+h 60
+w 60
+
+enemy2_down3
+image data/enemy2.png
+x 120
+y 0
+h 60
+w 60
+
+enemy2_down4
+image data/enemy2.png
+x 180
+y 0
+h 60
+w 60
+
+enemy2_up1
+image data/enemy2.png
+x 0
+y 180
+h 60
+w 60
+
+enemy2_up2
+image data/enemy2.png
+x 60
+y 180
+h 60
+w 60
+
+enemy2_up3
+image data/enemy2.png
+x 120
+y 180
+h 60
+w 60
+
+enemy2_up4
+image data/enemy2.png
+x 180
+y 180
+h 60
+w 60
+
+enemy2_left1
+image data/enemy2.png
+x 0
+y 60
+h 60
+w 60
+
+enemy2_left2
+image data/enemy2.png
+x 60
+y 60
+h 60
+w 60
+
+enemy2_left3
+image data/enemy2.png
+x 120
+y 60
+h 60
+w 60
+
+enemy2_left4
+image data/enemy2.png
+x 180
+y 60
+h 60
+w 60
+
+enemy2_right1
+image data/enemy2.png
+x 0
+y 120
+h 60
+w 60
+
+enemy2_right2
+image data/enemy2.png
+x 60
+y 120
+h 60
+w 60
+
+enemy2_right3
+image data/enemy2.png
+x 120
+y 120
+h 60
+w 60
+
+enemy2_right4
+image data/enemy2.png
+x 180
+y 120
+h 60
+w 60
+
+enemy3_down1
+image data/enemy3.png
+x 0
+y 0
+h 60
+w 60
+
+enemy3_down2
+image data/enemy3.png
+x 60
+y 0
+h 60
+w 60
+
+enemy3_down3
+image data/enemy3.png
+x 120
+y 0
+h 60
+w 60
+
+enemy3_down4
+image data/enemy3.png
+x 180
+y 0
+h 60
+w 60
+
+enemy3_up1
+image data/enemy3.png
+x 0
+y 180
+h 60
+w 60
+
+enemy3_up2
+image data/enemy3.png
+x 60
+y 180
+h 60
+w 60
+
+enemy3_up3
+image data/enemy3.png
+x 120
+y 180
+h 60
+w 60
+
+enemy3_up4
+image data/enemy3.png
+x 180
+y 180
+h 60
+w 60
+
+enemy3_left1
+image data/enemy3.png
+x 0
+y 60
+h 60
+w 60
+
+enemy3_left2
+image data/enemy3.png
+x 60
+y 60
+h 60
+w 60
+
+enemy3_left3
+image data/enemy3.png
+x 120
+y 60
+h 60
+w 60
+
+enemy3_left4
+image data/enemy3.png
+x 180
+y 60
+h 60
+w 60
+
+enemy3_right1
+image data/enemy3.png
+x 0
+y 120
+h 60
+w 60
+
+enemy3_right2
+image data/enemy3.png
+x 60
+y 120
+h 60
+w 60
+
+enemy3_right3
+image data/enemy3.png
+x 120
+y 120
+h 60
+w 60
+
+enemy3_right4
+image data/enemy3.png
+x 180
+y 120
+h 60
+w 60

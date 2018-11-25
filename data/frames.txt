@@ -1,0 +1,232 @@
+33
+
+bomberman_down1
+image data/Bomberman_Sprite.png
+x 132
+y 0
+w 35
+h 50
+
+bomberman_down2
+image data/Bomberman_Sprite.png
+x 100
+y 0
+w 32
+h 50
+
+bomberman_down3
+image data/Bomberman_Sprite.png
+x 167
+y 0
+w 33
+h 50
+
+bomberman_left1
+image data/Bomberman_Sprite.png
+x 35
+y 0
+w 30
+h 50
+
+bomberman_left2
+image data/Bomberman_Sprite.png
+x 0
+y 0
+w 35
+h 50
+
+bomberman_left3
+image data/Bomberman_Sprite.png
+x 65
+y 0
+w 35
+h 50
+
+bomberman_right1
+image data/Bomberman_Sprite.png
+x 334
+y 0
+w 30
+h 50
+
+bomberman_right2
+image data/Bomberman_Sprite.png
+x 298
+y 0
+w 36
+h 50
+
+bomberman_right3
+image data/Bomberman_Sprite.png
+x 364
+y 0
+w 36
+h 50
+
+bomberman_up1
+image data/Bomberman_Sprite.png
+x 235
+y 0
+w 30
+h 50
+
+bomberman_up2
+image data/Bomberman_Sprite.png
+x 200
+y 0
+w 35
+h 50
+
+bomberman_up3
+image data/Bomberman_Sprite.png
+x 265
+y 0
+w 33
+h 50
+
+wall
+image data/Tile.png
+x 1176
+y 1842
+w 60
+h 60
+
+ground
+image data/ground.png
+x 1866
+y 2618
+w 60
+h 60
+
+brick
+image data/Tile.png
+x 1246
+y 1842
+w 60
+h 60
+
+boomlv1_1
+image data/Tile.png
+x 1110
+y 1981
+w 60
+h 60
+
+boomlv1_2
+image data/Tile.png
+x 1177
+y 1981
+w 60
+h 60
+
+boomlv1_3
+image data/Tile.png
+x 1247
+y 1981
+w 60
+h 60
+
+explosionlv1_5
+image data/Tile.png
+x 1381
+y 2047
+w 60
+h 60
+
+lastflamelv1_up5
+image data/Tile.png
+x 1584
+y 1910
+w 60
+h 60
+
+lastflamelv1_down5
+image data/Tile.png
+x 1584
+y 2184
+w 60
+h 60
+
+lastflamelv1_left5
+image data/Tile.png
+x 1380
+y 1910
+w 60
+h 60
+
+lastflamelv1_right5
+image data/Tile.png
+x 1176
+y 2046
+w 60
+h 60
+
+flameItem
+image data/Items.png
+x 12
+y 12
+w 60
+h 60
+
+bombItem
+image data/Items.png
+x 144
+y 12
+w 60
+h 60
+
+speedItem
+image data/Items.png
+x 209
+y 12
+w 60
+h 60
+
+flamelv1_y5
+image data/Tile.png
+x 1450
+y 2115
+w 60
+h 60
+
+flamelv1_x5
+image data/Tile.png
+x 1108
+y 2046
+w 60
+h 60
+
+life
+image data/Items.png
+x 407
+y 78
+w 58
+h 58
+
+time
+image data/Items.png
+x 144
+y 210
+w 60
+h 60
+
+nextButton
+image data/next.png
+x 0
+y 0
+w 100
+h 100
+
+exitButton
+image data/exit.png
+x 0
+y 0
+w 100
+h 100
+
+door
+image data/door.png
+x 0
+y 0
+w 60
+h 60

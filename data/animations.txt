@@ -1,0 +1,16 @@
+5
+
+bomberman_down
+bomberman_down1 80000000 bomberman_down2 80000000 bomberman_down3 80000000
+
+bomberman_left
+bomberman_left1 80000000 bomberman_left2 80000000 bomberman_left3 80000000
+
+bomberman_right
+bomberman_right1 80000000 bomberman_right2 80000000 bomberman_right3 80000000
+
+bomberman_up
+bomberman_up1 80000000 bomberman_up2 80000000 bomberman_up3 80000000
+
+bomblv1
+boomlv1_1 60000000 boomlv1_2 60000000 boomlv1_3 60000000

@@ -1,0 +1,11 @@
+5
+
+gameSound data/bgmusic.wav
+
+completeSound data/gmae.wav
+
+bombSound data/atari_boom.wav
+
+loseSound data/lose.wav
+
+getItem data/getItem.wav

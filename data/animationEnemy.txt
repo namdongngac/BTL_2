@@ -1,0 +1,37 @@
+12
+
+enemy1_down
+enemy1_down1 80000000 enemy1_down2 80000000 enemy1_down3 80000000 enemy1_down4 80000000
+
+enemy1_up
+enemy1_up1 80000000 enemy1_up2 80000000 enemy1_up3 80000000 enemy1_up4 80000000
+
+enemy1_left
+enemy1_left1 80000000 enemy1_left2 80000000 enemy1_left3 80000000 enemy1_left4 80000000
+
+enemy1_right
+enemy1_right1 80000000 enemy1_right2 80000000 enemy1_right3 80000000 enemy1_right4 80000000
+
+enemy2_down
+enemy2_down1 80000000 enemy2_down2 80000000 enemy2_down3 80000000 enemy2_down4 80000000
+
+enemy2_up
+enemy2_up1 80000000 enemy2_up2 80000000 enemy2_up3 80000000 enemy2_up4 80000000
+
+enemy2_left
+enemy2_left1 80000000 enemy2_left2 80000000 enemy2_left3 80000000 enemy2_left4 80000000
+
+enemy2_right
+enemy2_right1 80000000 enemy2_right2 80000000 enemy2_right3 80000000 enemy2_right4 80000000
+
+enemy3_down
+enemy3_down1 80000000 enemy3_down2 80000000 enemy3_down3 80000000 enemy3_down4 80000000
+
+enemy3_up
+enemy3_up1 80000000 enemy3_up2 80000000 enemy3_up3 80000000 enemy3_up4 80000000
+
+enemy3_left
+enemy3_left1 80000000 enemy3_left2 80000000 enemy3_left3 80000000 enemy3_left4 80000000
+
+enemy3_right
+enemy3_right1 80000000 enemy3_right2 80000000 enemy3_right3 80000000 enemy3_right4 80000000
